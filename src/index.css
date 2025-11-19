@@ -1,0 +1,424 @@
+/* src/index.css
+   Tailwind 4.1 import + design tokens and accessibility helpers.
+   Keep @import "tailwindcss"; at the top for v4+.
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Momo+Signature&display=swap');
+/* Sporting Grotesque — site-wide */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Sporting+Grotesque:wght@300;400;600;700;800&display=swap");
+@import "tailwindcss";
+
+/* ---------------------
+   Design tokens (from video)
+   --------------------- */
+:root {
+  --color-bg-dark: #090e21; /* near-black / dark navy */
+  --color-navy: #1a2956;
+  --color-mid: #6a749e;
+  --color-light: #e0e4ee;
+  --color-accent: #21e898;
+
+  --max-content-width: 1200px;
+  --container-padding-x: 1.25rem; /* 20px */
+  --page-gap: 1.5rem;
+}
+
+* {
+  font-family: 'Momo Signature', cursive;
+  word-spacing: 0.2em;
+  line-height: 1.6;
+}
+
+/* Basic resets / sensible defaults */
+html,
+body,
+#root {
+  height: 100%;
+}
+body {
+  margin: 0;
+  background: var(--color-bg-dark);
+  color: var(--color-light);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* font-family: "Sporting Grotesque", "Helvetica Neue", Helvetica, Arial, sans-serif; */
+  line-height: 1.36;
+  text-rendering: optimizeLegibility;
+  -webkit-font-feature-settings: "kern";
+  font-feature-settings: "kern";
+}
+
+/* Container helper (if you prefer plain CSS container) */
+.container {
+  max-width: var(--max-content-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding-x);
+  padding-right: var(--container-padding-x);
+}
+
+/* Hero overlay helper used in Home page */
+.bg-hero-overlay {
+  background: rgba(9, 14, 33, 0.45);
+}
+
+/* Performance hint for animated elements */
+.will-change-transform {
+  will-change: transform, opacity;
+}
+
+/* Focus ring helper for accessibility */
+:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(33, 232, 152, 0.16);
+  border-radius: 6px;
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Optional: small utility classes if you need them outside Tailwind */
+.text-accent {
+  color: var(--color-accent);
+}
+.bg-accent {
+  background-color: var(--color-accent);
+}
+
+/* small helpers for navbar contrast */
+.nav-pill-border {
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* --- Aivora homepage styles --- */
+.aivora-root {
+  height: 100vh;
+  background-position: left center;
+  background-size: 110%;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  word-spacing: normal;
+  line-height: 1.36;
+}
+.aivora-root * {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  word-spacing: normal;
+  line-height: 1.36;
+}
+.aivora-root::-webkit-scrollbar {
+  display: none; /* WebKit */
+}
+
+/* header */
+.aivora-header {
+  background: rgba(4, 6, 12, 0.85);
+  backdrop-filter: blur(4px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+.aivora-header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.aivora-logo {
+  height: 44px;
+}
+.aivora-nav {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+.pill {
+  border-radius: 999px;
+  padding: 8px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: transparent;
+  color: #cfe7ff;
+  font-size: 14px;
+  font-family: "Sporting Grotesque", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.purchase {
+  background: white;
+  color: #04253a;
+  padding: 10px 18px;
+  border-radius: 28px;
+  font-weight: 700;
+  box-shadow: 0 6px 20px rgba(3, 10, 20, 0.6);
+  font-family: "Sporting Grotesque", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* hero layout */
+.aivora-hero {
+  width: 100%;
+  margin: 0;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  position: relative;
+  padding: 80px 0 0;
+  height: calc(100vh - 80px);
+  overflow: hidden;
+}
+
+/* left column */
+.hero-left {
+  flex: 1 1 640px;
+  max-width: 720px;
+  padding-left: 24px;
+}
+.kicker {
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 18px;
+}
+.kicker .arrow {
+  color: var(--color-navy);
+  margin-right: 8px;
+}
+.hero-title {
+  font-weight: 800;
+  font-size: 60px;
+  line-height: 1.4;
+  margin: 0;
+  color: #ffffff;
+  font-family: "Sporting Grotesque", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.hero-title span {
+  display: inline;
+}
+
+/* badge / CTA */
+.badge-row {
+  margin-top: 40px;
+}
+.pill.large {
+  display: inline-flex;
+  align-items: center;
+  gap: 24px;
+  padding: 28px 50px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.8);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  font-size: 36px;
+  font-weight: 800;
+  color: #ffffff;
+  font-family: "Sporting Grotesque", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #2156F5 0%, #19C7C1 50%, #19E990 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.badge-icon {
+  width: 60px;
+  height: 60px;
+}
+
+/* paragraph */
+.hero-sub {
+  margin-top: 40px;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 550px;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: "Sporting Grotesque", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* purchase button section */
+.purchase-section {
+  margin-top: 30px;
+}
+
+/* right column - two images stacked/tilted */
+.hero-right {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 70vw;
+  height: 100%;
+  display: block;
+  overflow: visible;
+}
+
+@keyframes parallaxDrift1 {
+  0%, 100% {
+    transform: rotateZ(-5deg) rotateX(-30deg) rotateY(-10deg) translate(0px, 400px) scale(1.25);
+  }
+  25% {
+    transform: rotateZ(-5deg) rotateX(-30deg) rotateY(-10deg) translate(15px, 385px) scale(1.25);
+  }
+  50% {
+    transform: rotateZ(-5deg) rotateX(-30deg) rotateY(-10deg) translate(-10px, 410px) scale(1.25);
+  }
+  75% {
+    transform: rotateZ(-5deg) rotateX(-30deg) rotateY(-10deg) translate(8px, 395px) scale(1.25);
+  }
+}
+
+@keyframes parallaxDrift2 {
+  0%, 100% {
+    transform: rotateZ(-10deg) rotateX(-30deg) rotateY(-10deg) translate(-300px, 420px) scale(1.25);
+  }
+  25% {
+    transform: rotateZ(-10deg) rotateX(-30deg) rotateY(-10deg) translate(-285px, 405px) scale(1.25);
+  }
+  50% {
+    transform: rotateZ(-10deg) rotateX(-30deg) rotateY(-10deg) translate(-310px, 435px) scale(1.25);
+  }
+  75% {
+    transform: rotateZ(-10deg) rotateX(-30deg) rotateY(-10deg) translate(-292px, 415px) scale(1.25);
+  }
+}
+
+/* Beautiful floating animation for hero tiles */
+@keyframes floatDrift1 {
+  0%, 100% {
+    transform: rotateZ(-10deg) rotateX(-30deg) rotateY(-10deg) translateY(300px) scale(1.4) translateX(0px);
+  }
+  25% {
+    transform: rotateZ(-10deg) rotateX(-30deg) rotateY(-10deg) translateY(285px) scale(1.4) translateX(15px);
+  }
+  50% {
+    transform: rotateZ(-10deg) rotateX(-30deg) rotateY(-10deg) translateY(310px) scale(1.4) translateX(-10px);
+  }
+  75% {
+    transform: rotateZ(-10deg) rotateX(-30deg) rotateY(-10deg) translateY(295px) scale(1.4) translateX(8px);
+  }
+}
+
+
+
+
+
+/* base styling for floating tiles */
+.hero-tiles {
+  position: absolute;
+  right: -50px;
+  bottom: -20px;
+  width: 120%;
+  max-width: none;
+  transform-origin: center right;
+  border-radius: 10px;
+  opacity: 0.98;
+  will-change: transform;
+}
+
+/* primary floating image */
+.tile1 {
+  z-index: 10;
+  animation: floatDrift1 8s ease-in-out infinite;
+}
+
+
+
+
+
+/* responsive adjustments */
+@media (max-width: 1100px) {
+  .hero-title {
+    font-size: 60px;
+  }
+  .hero-right {
+    display: none;
+  } /* hide tiles on small screens to avoid overflow */
+}
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 40px;
+  }
+  .aivora-header-inner {
+    padding: 12px 18px;
+  }
+  .aivora-hero {
+    padding: 24px 0;
+    margin-top: 6px;
+  }
+  .hero-left {
+    padding-left: 18px;
+  }
+}
+
+
+/* === diagonal inner-loop + transform composition === */
+
+.hero-tiles {
+  position: relative;
+  overflow: visible; /* .hero-right still hides overflow */
+  transform-style: preserve-3d;
+}
+
+/* inner stack that slides along a diagonal vector */
+.diagonal-track {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  will-change: transform;
+  transform-origin: center center;
+  /* animation will be applied inline by JS: e.g. track.style.animation = `diagonal-loop ${secs}s linear infinite` */
+  /* dx set by JS: track.style.setProperty('--dx', `${dx}px`) */
+}
+
+/* identical blocks for the two copies */
+.diagonal-item {
+  flex: 0 0 auto;
+  display: block;
+}
+
+.diagonal-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  user-select: none;
+  pointer-events: none;
+  -webkit-user-drag: none;
+  backface-visibility: hidden;
+}
+
+/* Move the track right by --dx (px) and down by 50% (one image height)
+   Track height = 2 x image height so 50% equals one image height */
+@keyframes diagonal-loop {
+  0%   { transform: translate(0px, 0%); }
+  100% { transform: translate(var(--dx, 0px), 50%); }
+}
+
+/* pause on hover for inspection */
+.hero-right:hover .diagonal-track {
+  animation-play-state: paused;
+}
+
+/* reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .diagonal-track { animation: none !important; }
+}
+
+/* CheckoutPage styles */
+.checkout-page {
+  background-color: #141831;
+  min-height: 100vh;
+  color: #fff;
+  padding: 40px 24px;
+  font-family: "Sporting Grotesque", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
