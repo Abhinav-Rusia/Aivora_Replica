@@ -72,9 +72,9 @@ export default function ElementsShowcase() {
       {/* Heading */}
       <div className="w-full text-center mb-6">
         <div className="inline-flex items-center gap-3 bg-transparent px-4 py-2 rounded-md">
-          <span className="inline-block w-2 h-2 rounded-full bg-emerald-400" />
-          <div className="text-sm text-slate-200">Essential <span className="text-emerald-400 font-semibold">80+ Web Elements</span> Included</div>
-          <span className="inline-block w-2 h-2 rounded-full bg-emerald-400" />
+          <span className="inline-block w-2 h-2 rounded-full bg-[#00F2FE]" />
+          <div className="text-sm text-slate-200">Essential <span className="text-[#00F2FE] font-semibold">80+ Web Elements</span> Included</div>
+          <span className="inline-block w-2 h-2 rounded-full bg-[#00F2FE]" />
         </div>
       </div>
 

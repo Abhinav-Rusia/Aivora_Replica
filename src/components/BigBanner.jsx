@@ -10,6 +10,7 @@ export default function BigBanner() {
         src={bigBanner} 
         alt="Big Banner" 
         className="w-full h-full object-cover object-right" 
+        style={{ filter: 'hue-rotate(180deg) saturate(1.2) brightness(0.9)' }}
       />
       
       {/* Dark Overlay for better text readability */}
@@ -20,12 +21,12 @@ export default function BigBanner() {
         <div className="pl-16">
           <div className="max-w-3xl">
             <h1 className="text-white text-4xl lg:text-6xl font-bold leading-tight mb-6 drop-shadow-2xl">
-              Create and customize your <span className="text-[#00FF97]">legendary</span> website with easy and flexibility
+              Create and customize your <span className="text-[#00F2FE]">legendary</span> website with easy and flexibility
             </h1>
             <div className="mt-10">
               <div className="transform scale-125 origin-left">
                 <PurchaseButton
-                  bgColor="#00FF97"
+                  bgColor="#00F2FE"
                   textColor="#090e21"
                   iconColor="#090e21"
                   circleColor="#090e21"

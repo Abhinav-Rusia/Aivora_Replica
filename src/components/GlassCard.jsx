@@ -36,7 +36,7 @@ export default function GlassCard({ imageSrc, title, subtitle, size = 'md', clas
       {/* circular image with subtle ring */}
       <div className={`rounded-full ${s.img} flex items-center justify-center mb-4 relative`}>
         {/* ring */}
-        <div className="absolute inset-0 rounded-full bg-gradient-to-br from-emerald-400/30 via-cyan-300/20 to-indigo-500/10 p-[2px]">
+        <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#00F2FE]/30 via-cyan-300/20 to-indigo-500/10 p-[2px]">
           <div className={`w-full h-full rounded-full bg-[#071428] flex items-center justify-center overflow-hidden`}> 
             {/* image */}
             <img src={imageSrc} alt={title} className={`object-contain w-3/4 h-3/4 rounded-full transition-transform duration-200 group-hover:scale-x-[-1]`} />

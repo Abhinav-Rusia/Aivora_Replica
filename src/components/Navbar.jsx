@@ -1,6 +1,7 @@
 // src/components/Navbar.jsx
 import React, { useState } from "react";
-import logo from "../assets/logo.svg";
+import { Link } from "react-router-dom";
+import logo from "../assets/logo.png";
 import PurchaseButton from "./PurchaseButton.jsx";
 
 export default function Navbar() {
@@ -12,7 +13,9 @@ export default function Navbar() {
         <div className="grid grid-cols-3 items-center gap-4 h-20">
           {/* LEFT: Logo */}
           <div className="flex items-center gap-3">
-            <img src={logo} alt="Aivora" className="h-10 w-auto" />
+            <Link to="/">
+              <img src={logo} alt="Varman Tech" className="h-10 w-auto cursor-pointer" />
+            </Link>
           </div>
 
           {/* CENTER: nav items (centered) */}
@@ -20,28 +23,28 @@ export default function Navbar() {
             <ul className="flex items-center gap-4">
               {/* each nav link as a rounded pill */}
               <li>
-                <a
-                  href="#demos"
+                <Link
+                  to="/services"
                   className="inline-block px-5 py-2 rounded-full text-sm text-white border border-white/6 hover:border-white/18 hover:scale-105 transition-all duration-200 whitespace-nowrap"
                 >
-                  Pre built demos
-                </a>
+                  Services
+                </Link>
               </li>
               <li>
-                <a
-                  href="#features"
+                <Link
+                  to="/about"
                   className="inline-block px-5 py-2 rounded-full text-sm text-white border border-white/6 hover:border-white/18 hover:scale-105 transition-all duration-200"
                 >
-                  features
-                </a>
+                  About Us
+                </Link>
               </li>
               <li>
-                <a
-                  href="#pages"
+                <Link
+                  to="/contact"
                   className="inline-block px-5 py-2 rounded-full text-sm text-white border border-white/6 hover:border-white/18 hover:scale-105 transition-all duration-200"
                 >
-                  Pages
-                </a>
+                  Contact Us
+                </Link>
               </li>
               <li>
                 <a
@@ -87,9 +90,9 @@ export default function Navbar() {
         <div className="md:hidden bg-[#00020F] border-t border-black/30">
           <div className="px-6 py-4">
             <ul className="flex flex-col gap-3">
-              <li><a href="#demos" className="block px-3 py-2 rounded-md text-white">Pre built demos</a></li>
-              <li><a href="#features" className="block px-3 py-2 rounded-md text-white">features</a></li>
-              <li><a href="#pages" className="block px-3 py-2 rounded-md text-white">Pages</a></li>
+              <li><Link to="/services" className="block px-3 py-2 rounded-md text-white">Services</Link></li>
+              <li><Link to="/about" className="block px-3 py-2 rounded-md text-white">About Us</Link></li>
+              <li><Link to="/contact" className="block px-3 py-2 rounded-md text-white">Contact Us</Link></li>
               <li><a href="#support" className="block px-3 py-2 rounded-md text-white">support</a></li>
               <li className="pt-2">
                 <a

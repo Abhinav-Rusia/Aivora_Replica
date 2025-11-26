@@ -3,10 +3,7 @@
    Keep @import "tailwindcss"; at the top for v4+.
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Momo+Signature&display=swap');
-/* Sporting Grotesque — site-wide */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap');
-@import url("https://fonts.googleapis.com/css2?family=Sporting+Grotesque:wght@300;400;600;700;800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
 
 /* ---------------------
@@ -17,7 +14,7 @@
   --color-navy: #1a2956;
   --color-mid: #6a749e;
   --color-light: #e0e4ee;
-  --color-accent: #21e898;
+  --color-accent: #00F2FE;
 
   --max-content-width: 1200px;
   --container-padding-x: 1.25rem; /* 20px */
@@ -25,9 +22,7 @@
 }
 
 * {
-  font-family: 'Momo Signature', cursive;
-  word-spacing: 0.2em;
-  line-height: 1.6;
+  font-family: 'Montserrat', sans-serif;
 }
 
 /* Basic resets / sensible defaults */
@@ -42,7 +37,6 @@ body {
   color: var(--color-light);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* font-family: "Sporting Grotesque", "Helvetica Neue", Helvetica, Arial, sans-serif; */
   line-height: 1.36;
   text-rendering: optimizeLegibility;
   -webkit-font-feature-settings: "kern";
@@ -100,25 +94,21 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-/* --- Aivora homepage styles --- */
+/* --- Varman Tech homepage styles --- */
 .aivora-root {
   height: 100vh;
   background-position: left center;
   background-size: 110%;
   background-repeat: no-repeat;
   color: #fff;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   position: relative;
   overflow: hidden;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* Internet Explorer 10+ */
-  word-spacing: normal;
-  line-height: 1.36;
 }
 .aivora-root * {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  word-spacing: normal;
-  line-height: 1.36;
+  font-family: 'Montserrat', sans-serif;
 }
 .aivora-root::-webkit-scrollbar {
   display: none; /* WebKit */
@@ -153,7 +143,7 @@ body {
   background: transparent;
   color: #cfe7ff;
   font-size: 14px;
-  font-family: "Sporting Grotesque", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 .purchase {
   background: white;
@@ -162,7 +152,7 @@ body {
   border-radius: 28px;
   font-weight: 700;
   box-shadow: 0 6px 20px rgba(3, 10, 20, 0.6);
-  font-family: "Sporting Grotesque", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 /* hero layout */
@@ -201,7 +191,7 @@ body {
   line-height: 1.4;
   margin: 0;
   color: #ffffff;
-  font-family: "Sporting Grotesque", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 .hero-title span {
   display: inline;
@@ -222,11 +212,11 @@ body {
   font-size: 36px;
   font-weight: 800;
   color: #ffffff;
-  font-family: "Sporting Grotesque", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .gradient-text {
-  background: linear-gradient(90deg, #2156F5 0%, #19C7C1 50%, #19E990 100%);
+  background: linear-gradient(90deg, #00F2FE 0%, #00D4FE 50%, #00B6FE 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -243,7 +233,7 @@ body {
   max-width: 550px;
   font-size: 16px;
   font-weight: 600;
-  font-family: "Sporting Grotesque", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 /* purchase button section */
@@ -298,19 +288,15 @@ body {
     transform: rotateZ(-10deg) rotateX(-30deg) rotateY(-10deg) translateY(300px) scale(1.4) translateX(0px);
   }
   25% {
-    transform: rotateZ(-10deg) rotateX(-30deg) rotateY(-10deg) translateY(285px) scale(1.4) translateX(15px);
+    transform: rotateZ(-8deg) rotateX(-28deg) rotateY(-8deg) translateY(280px) scale(1.42) translateX(20px);
   }
   50% {
-    transform: rotateZ(-10deg) rotateX(-30deg) rotateY(-10deg) translateY(310px) scale(1.4) translateX(-10px);
+    transform: rotateZ(-12deg) rotateX(-32deg) rotateY(-12deg) translateY(320px) scale(1.38) translateX(-15px);
   }
   75% {
-    transform: rotateZ(-10deg) rotateX(-30deg) rotateY(-10deg) translateY(295px) scale(1.4) translateX(8px);
+    transform: rotateZ(-9deg) rotateX(-29deg) rotateY(-9deg) translateY(290px) scale(1.41) translateX(12px);
   }
 }
-
-
-
-
 
 /* base styling for floating tiles */
 .hero-tiles {
@@ -328,12 +314,8 @@ body {
 /* primary floating image */
 .tile1 {
   z-index: 10;
-  animation: floatDrift1 8s ease-in-out infinite;
+  animation: floatDrift1 4s ease-in-out infinite;
 }
-
-
-
-
 
 /* responsive adjustments */
 @media (max-width: 1100px) {
@@ -359,7 +341,6 @@ body {
     padding-left: 18px;
   }
 }
-
 
 /* === diagonal inner-loop + transform composition === */
 
@@ -412,13 +393,3 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .diagonal-track { animation: none !important; }
 }
-
-/* CheckoutPage styles */
-.checkout-page {
-  background-color: #141831;
-  min-height: 100vh;
-  color: #fff;
-  padding: 40px 24px;
-  font-family: "Sporting Grotesque", "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-

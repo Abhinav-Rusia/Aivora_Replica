@@ -1,6 +1,6 @@
 // src/pages/AivoraHomepage.jsx
 import React, { useEffect, useRef, useState } from "react";
-import Logo from "../assets/logo.svg";
+import Logo from "../assets/logo.png";
 import bg from "../assets/hero_bg.jpg";
 import slider from "../assets/sliderImg.png";
 import rotate1 from "../assets/rotate01.svg";
@@ -40,14 +40,14 @@ export default function AivoraHomepage() {
       {/* Hero Section with Background Image */}
       <div className="aivora-root object-left " style={{ backgroundImage: `url(${bg})` }} >
       {/* Color Overlay */}
-      <div className="absolute inset-0 bg-[#0F1C62] opacity-20 pointer-events-none"></div>
+      <div className="absolute inset-0 bg-[#00F2FE] opacity-15 pointer-events-none"></div>
       <header className="aivora-header relative z-10">
         <div className="aivora-header-inner">
-          <img src={Logo} alt="Aivora" className="aivora-logo" />
+          <img src={Logo} alt="Varman Tech" className="aivora-logo" />
           <nav className="aivora-nav">
-            <button className="pill">Pre Built Demos</button>
-            <button className="pill">Features</button>
-            <button className="pill">Pages</button>
+            <button className="pill">Services</button>
+            <button className="pill">About Us</button>
+            <button className="pill">Contact Us</button>
             <button className="pill">Support</button>
           </nav>
           <div>
@@ -79,7 +79,7 @@ export default function AivoraHomepage() {
           <div className="purchase-section mt-6" >
             <div style={{ transform: 'scale(1.15)', transformOrigin: 'left' }}>
               <PurchaseButton
-                bgColor="#00FF97"
+                bgColor="#00F2FE"
                 textColor="#090e21"
                 iconColor="#090e21"
                 circleColor="#090e21"

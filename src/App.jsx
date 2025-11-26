@@ -5,6 +5,9 @@ import Layout from "./components/Layout";
 
 // Lazy-load pages so App remains tiny
 const Home = React.lazy(() => import("./pages/Home"));
+const Services = React.lazy(() => import("./pages/Services"));
+const AboutUs = React.lazy(() => import("./pages/AboutUs"));
+const ContactUs = React.lazy(() => import("./pages/ContactUs"));
 const NotFound = React.lazy(() => import("./pages/NotFound"));
 
 export default function App() {
@@ -21,7 +24,9 @@ export default function App() {
           {/* Layout wraps every page (Navbar + Outlet) */}
           <Route element={<Layout />}>
             <Route index element={<Home />} />
-            {/* add other pages here when needed */}
+            <Route path="services" element={<Services />} />
+            <Route path="about" element={<AboutUs />} />
+            <Route path="contact" element={<ContactUs />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
